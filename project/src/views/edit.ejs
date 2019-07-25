@@ -1,0 +1,27 @@
+<% include _header %>
+
+
+<!-- modificar, primero saber qué dato es, en este caso id
+una vez recogidos los datos, los cambio yo y los envío con post
+redirección a la pag principal -->
+<div class="container-fuid">
+    <div class="col-5">
+        <form action="/update/<%= data.iduser %>" method="post">
+            <div class="form-group">
+                <input type="text" name="firstname" value="<%= data.firstname %>" placeholder="Nombre" class="form-control">
+                <input type="text" name="lastname" value="<%= data.lastname %>" placeholder="Apellidos" class="form-control">
+                <input type="text" name="phone" value="<%= data.phone %>" placeholder="Teléfono" class="form-control">
+                <input type="text" name="address" value="<%= data.address %>" placeholder="Residencia" class="form-control">
+                <input type="text" name="mail" value="<%= data.mail %>" placeholder="Email" class="form-control">
+                <input type="text" name="date" value="<%= data.date %>" placeholder="Fecha reserva" class="form-control">
+                <input type="text" name="size" value="<%= data.size %>" placeholder="Tamaño grupo" class="form-control">
+ 
+            </div>
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+        </form>
+    </div>
+</div>
+
+
+
+<% include _footer %>

@@ -1,0 +1,56 @@
+<% include _header %>
+
+<div class="col-5">
+    <form action="add" method="post">
+        <div class="form-group">
+                <input type="text" name="firstname" placeholder="Nombre" class="form-control">
+                <input type="text" name="lastname" placeholder="Apellidos" class="form-control">
+                <input type="text" name="phone" placeholder="Teléfono" class="form-control">
+                <input type="text" name="date" placeholder="Fecha reserva" class="form-control">
+                <input type="text" name="mail" placeholder="Email" class="form-control">
+                <input type="text" name="size" placeholder="Tamaño grupo" class="form-control">
+                <input type="text" name="address" placeholder="Dirección" class="form-control">
+                
+         </div>
+        <button type="submit" class="btn btn-primary">Guardar </button>
+    </form>
+</div>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Teléfono</th>
+            <th>Fecha reserva</th>
+            <th>Nº</th>
+            <th>Email</th>
+            <th>Dirección</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <% if (data){ %>
+            <% for(let i=0; i < data.length; i++){ %>
+        <tr>
+         <td><%=data[i].iduser%></td>
+         <td><%=data[i].firstname%></td>
+         <td><%=data[i].lastname%></td>
+         <td><%=data[i].phone%></td>
+         <td><%=data[i].date%></td>
+         <td><%=data[i].size%></td>
+         <td><%=data[i].mail%></td>
+         <td><%=data[i].address%></td>
+         <td>
+             <a href="/delete/<%=data[i].iduser%>" class="btn btn-danger">Borrar</a>
+             <a href="/update/<%=data[i].iduser%>" class="btn btn-info">Actualizar</a>
+         </td>
+
+        </tr>
+            <% } %>
+        <% } %>
+    </tbody>
+</table>
+
+<% include _footer %>
